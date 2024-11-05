@@ -1,4 +1,8 @@
+## Live Preview
 
+See the feature in action:
+ 
+![Feature Demo](http://tangqinying.com/demo_video/chat-scene-gif.GIF)
 
 ## Introduction
 
