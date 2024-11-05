@@ -22,7 +22,7 @@ npm run dev
 - Dependencies：`dgram`、`express`、`google-protobuf`、`protobufjs`、`ws`
 
 
-### Web端
+### Web Client
 
 - Functionality：Dialogue + 3D scene generation
 - Tech Stack and Dependencies
