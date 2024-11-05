@@ -1,76 +1,76 @@
 
 
-## 简介
+## Introduction
 
-根据对话生成剧情，并在3D场景中进行演绎
+This project generates storylines based on dialogues and enacts them within a 3D scene.
 
-## 启动
+## Getting Started
 
 ```bash
 npm install
 npm run dev
 ```
 
-## 项目架构
+## Project Structure
 
 
-### 服务器端
+### Server Side
 
-- 功能：接收 AI server 传来的指令，并与web端建立通信
-- 环境：`Node.js`
-- 项目文件：`client.cjs`
-- 相关依赖：`dgram`、`express`、`google-protobuf`、`protobufjs`、`ws`
+- Functionality：Receives instructions from the AI server and establishes communication with the web client.
+- Environment：`Node.js`
+- Main File：`client.cjs`
+- Dependencies：`dgram`、`express`、`google-protobuf`、`protobufjs`、`ws`
 
 
 ### Web端
 
-- 功能：对话 + 3D场景生成
-- 技术栈及相关依赖
+- Functionality：Dialogue + 3D scene generation
+- Tech Stack and Dependencies
     - `React + TypeScript + Vite`
-    - UI库：`Material UI`
-    - 样式：`TailwindCSS`
-    - 状态管理：`Zustand`
-    - 通信：`WebSocket`
-    - 3D ：`R3F`
-    - 寻路和人物控制：`Yuka.js`
-- 控制逻辑
+    - UI Library：`Material UI`
+    - Styling：`TailwindCSS`
+    - State Management：`Zustand`
+    - Communication：`WebSocket`
+    - 3D Rendering ：`R3F (React Three Fiber)`
+    - Navigation and Character Control：`Yuka.js`
+- Control Logic
   <ol type="1">
-    <li>接收并存储指令</li>
-    <li>通过参数传递给人物组件</li>
+    <li>Receive and store instructions</li>
+    <li>Pass them as parameters to character components</li>
     <li>
-      根据不同指令进行控制:
+      Control actions based on different instructions:
       <ul>
-        <li>移动：使用 Yuka + NavMesh</li>
-        <li>气泡框：THREE.Sprite</li>
-        <li>动画：THREE.AnimationAction</li>
+        <li>Movement：Uses <code>Yuka.js</code> + <code>NavMesh</code></li>
+        <li>Speech Bubbles：<code>THREE.Sprite</code></li>
+        <li>Animations：<code>THREE.AnimationAction</code></li>
       </ul>
     </li>
   </ol>
       
 
 
-### 重要文件所在目录
+### Key Directories
 
 ```
 chat_scene/
 │
 ├── src/   
 │   ├── hooks/  
-│   │   └── useWebSocket.ts                 # 数据通信、指令状态存储
+│   │   └── useWebSocket.ts                 # Data communication and instruction state storage
 │   │     
 │   └── pages/            
 │       └── chat/
-│           ├── message-box/                # 对话框相关
-│           └── threejs-area/               # threejs相关
-│               ├── controlByMessage.tsx      # 人物控制
-│               └── scene.tsx                 # 场景切换
+│           ├── message-box/                # Dialogue box components
+│           └── threejs-area/               # Three.js components
+│               ├── controlByMessage.tsx      # Character control logic
+│               └── scene.tsx                 # Scene switching logic
 │
 │
-└── client.cjs   # 服务器端入口文件
+└── client.cjs   # Server entry file
 ```
 
-## 未完成部分
+## Incomplete Parts
 
-- LLM 接口
-- 人物模型的动作问题
-- 相机跟随相关逻辑
+- LLM interface
+- Problems in animation
+- Camera-following logic
