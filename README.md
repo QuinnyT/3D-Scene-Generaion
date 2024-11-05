@@ -4,9 +4,11 @@ See the feature in action:
  
 ![Feature Demo](http://tangqinying.com/demo_video/chat-scene-gif.GIF)
 
+
 ## Introduction
 
 This project generates storylines based on dialogues and enacts them within a 3D scene.
+
 
 ## Getting Started
 
@@ -14,6 +16,7 @@ This project generates storylines based on dialogues and enacts them within a 3D
 npm install
 npm run dev
 ```
+
 
 ## Project Structure
 
